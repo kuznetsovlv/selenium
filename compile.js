@@ -52,6 +52,24 @@
 		}
 		output.printLine(tabs + end);
 	}
+	function parseCommands (values) {
+		var cmds = [];
+		for (var key in values)
+			values[key] = ('' + values[key]).split('<>');
+		var commands = values.command || [''],
+		    expects = values.expect || [''];
+		values = values.value || [''];
+		for (var c = 0, cl = commands.length; c < cl; ++c) {
+			var command = commands[c];
+			for (var v = 0, vl = values.length; v < vl; ++v) {
+				var value = values[v];
+				for (var e = 0, el = expects.length; e < el; ++e) {
+					cmds.push({td: [{text: command}, {text: value}, {text: expects[e]}]});
+				}
+			}
+		}
+		return cmds;
+	}
 	var html = {
 		xmlns: "http://www.w3.org/1999/xhtml",
 		'xml:lang': "en",
@@ -85,20 +103,19 @@
 	    i = 1,
 	    values,
 	    output = lio.output,
-	    tr = html.body.table.tbody.tr;
+	    tr = [];
 	output.printLine('<?xml version="1.0" encoding="UTF-8"?>');
 	output.printLine('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
 	conf.getHeader();
 
 	while (values = conf.getValues(i++)) {
-		var command = values.command,
-		    value = values.value || '',
-		    expect = values.expect || '';
-		switch (command) {
+		var value = values.value || '';
+		switch (values.command) {
 			case 'title': html.head.title.text = value; html.body.table.thead.tr.td.text = value; break;
 			case 'href': html.head.link.href = value; break;
-			default: tr.push({td: [{text: command}, {text: value}, {text: expect}]});
+			default: tr = tr.concat(parseCommands(values));//tr.push({td: [{text: command}, {text: value}, {text: expect}]});
 		}
 	}
+	html.body.table.tbody.tr = tr;
 	toHTML(html, 'html', 0);
 })()
