@@ -114,6 +114,8 @@
 	while (values = conf.getValues(i++)) {
 		var command = values.command,
 		    value = values.value || '';
+		if (!command)
+			continue;
 		if (SETS[command]) {
 			tr = tr.concat(util.clone(SETS[command]));
 		} else {
