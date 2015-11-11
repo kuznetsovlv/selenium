@@ -117,22 +117,26 @@
 		if (!command)
 			continue;
 		if (SETS[command]) {
-			tr = tr.concat(util.clone(SETS[command]));
+			var set = util.clone(SETS[command]);
+			if (setMaking)
+				SETS[setMaking] = SETS[setMaking].concat(set);
+			else
+				tr = tr.concat(set);
 		} else {
 			switch (command) {
 				case 'title': html.head.title.text = value; html.body.table.thead.tr.td.text = value; break;
 				case 'href': html.head.link.href = value; break;
 				case 'startSet':
 					if (setMaking)
-						throw "Incorrect structure: trying start set while not finished one.";
+						throw "Str " + --i + ": Incorrect structure: trying start set while not finished one.";
 					if (SETS[value])
-						throw "Set name " + value + " already exists.";
+						throw "Str " + --i + ": Set name " + value + " already exists.";
 					setMaking = value;
 					SETS[value] = [];
 					break;
 				case 'endSet':
 					if (!setMaking)
-						throw "Incorrect structure: trying finish unstarted set.";
+						throw "Str " + --i + ": Incorrect structure: trying finish unstarted set.";
 					setMaking = null;
 					break;
 				default: values = parseCommands(values);
