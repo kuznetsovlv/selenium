@@ -2,7 +2,8 @@
 
 (function () {
 	"use strict";
-	var path = require('optManager').getopt.create([]).parseSystem().argv[0]; 
+	var path = require('optManager').getopt.create([]).parseSystem().argv[0];
+	var util = require('./node_modules/util');
 	var lio = require('lio').getLIO([
 		{
 			type: 'input',
@@ -103,17 +104,41 @@
 	    i = 1,
 	    values,
 	    output = lio.output,
-	    tr = [];
+	    tr = [],
+	    SETS = {},
+	    setMaking = null;
 	output.printLine('<?xml version="1.0" encoding="UTF-8"?>');
 	output.printLine('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
 	conf.getHeader();
 
 	while (values = conf.getValues(i++)) {
-		var value = values.value || '';
-		switch (values.command) {
-			case 'title': html.head.title.text = value; html.body.table.thead.tr.td.text = value; break;
-			case 'href': html.head.link.href = value; break;
-			default: tr = tr.concat(parseCommands(values));//tr.push({td: [{text: command}, {text: value}, {text: expect}]});
+		var command = values.command,
+		    value = values.value || '';
+		if (SETS[command]) {
+			tr = tr.concat(util.clone(SETS[command]));
+		} else {
+			switch (command) {
+				case 'title': html.head.title.text = value; html.body.table.thead.tr.td.text = value; break;
+				case 'href': html.head.link.href = value; break;
+				case 'startSet':
+					if (setMaking)
+						throw "Incorrect structure: trying start set while not finished one.";
+					if (SETS[value])
+						throw "Set name " + value + " already exists.";
+					setMaking = value;
+					SETS[value] = [];
+					break;
+				case 'endSet':
+					if (!setMaking)
+						throw "Incorrect structure: trying finish unstarted set.";
+					setMaking = null;
+					break;
+				default: values = parseCommands(values);
+					if (setMaking)
+						SETS[setMaking] = SETS[setMaking].concat(values);
+					else
+						tr = tr.concat(values);
+			}
 		}
 	}
 	html.body.table.tbody.tr = tr;
