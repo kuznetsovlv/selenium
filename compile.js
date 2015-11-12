@@ -64,9 +64,7 @@
 			var command = commands[c];
 			for (var v = 0, vl = values.length; v < vl; ++v) {
 				var value = values[v];
-				for (var e = 0, el = expects.length; e < el; ++e) {
-					cmds.push({td: [{text: command}, {text: value}, {text: expects[e]}]});
-				}
+				cmds.push({td: [{text: command}, {text: value}, {text: expects[c * vl + v] || ''}]})
 			}
 		}
 		return cmds;
