@@ -3,7 +3,6 @@
 (function () {
 	"use strict";
 	var path = require('optManager').getopt.create([]).parseSystem().argv[0];
-	var util = require('./node_modules/util');
 	var lio = require('lio').getLIO([
 		{
 			type: 'input',
