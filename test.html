@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<link rel="selenium.base" href="http://localhost:8080/"/>
+<meta charset="UTF-8" content="text/html" http-equiv="Content-Type"/>
 <title>wireless_ap</title>
+<link href="http://localhost:8080/" rel="selenium.base"/>
 </head>
 <body>
-<table cellpadding="1" cellspacing="1" border="1">
+<table border="1" cellpadding="1" cellspacing="1">
 <thead>
 <tr>
-	<td rowspan="1" colspan="3">wireless_ap</td>
+	<td colspan="3" rowspan="1">wireless_ap</td>
 </tr>
 </thead>
 <tbody>
@@ -26,21 +26,111 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>#dashboard.status</td>
+	<td>#wireless.ap-2ghz</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementAndClick</td>
-	<td>//a[@title='Wireless']</td>
+	<td>setSpeed</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementAndClick</td>
-	<td>//a/span[text()='Access Point 2.4 GHz']</td>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>WPA2</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>RU</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BGN</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20-40</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
 	<td>label=Switch*on:</td>
 	<td></td>
 </tr>
@@ -56,8 +146,4478 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>dfsd</td>
-	<td>wew</td>
+	<td>label=Country:</td>
+	<td>RU</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BGN</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20-40</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>WPA2</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>RU</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BGN</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20-40</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>WPA2</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>RU</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BGN</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20-40</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>WPA2</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>RU</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BGN</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20-40</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=Wireless*(SSID):</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>WPA2</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>RU</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BGN</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20-40</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Wireless*(SSID):</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>WPA2</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>RU</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BGN</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20-40</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>label=Enable Encryption:</td>
+	<td>label=None</td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>disabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>RU</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BGN</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20-40</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>label=Country:</td>
+	<td>label=United States</td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>disabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BGN</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20-40</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>label=Mode:</td>
+	<td>label=802.11bg</td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>disabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20-40</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>disabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20-40</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>label=Channel width:</td>
+	<td>label=20 MHz</td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>disabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>label=Transmission power level:</td>
+	<td>label=10%</td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>disabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>disabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>disabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>label=Enable Encryption:</td>
+	<td>label=WEP</td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #1:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #1:</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #1:</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #1:</td>
+	<td>1234567890</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td>1234567890</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #1:</td>
+	<td>12345678901</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #1:</td>
+	<td>1234567890123</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td>1234567890123</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #1:</td>
+	<td>12345678901234</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #1:</td>
+	<td>123456789abcdef0123456789ab</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #1:</td>
+	<td>123456789abcdef0123456789a</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td>123456789abcdef0123456789a</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>label=Default Key:</td>
+	<td>label=WEP key #2</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td>123456789abcdef0123456789a</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #2:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #2:</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #2:</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #2:</td>
+	<td>1234567890</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td>1234567890</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #2:</td>
+	<td>12345678901</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #2:</td>
+	<td>1234567890123</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td>1234567890123</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #2:</td>
+	<td>12345678901234</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #2:</td>
+	<td>123456789abcdef0123456789ab</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #2:</td>
+	<td>123456789abcdef0123456789a</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td>123456789abcdef0123456789a</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>Default Key</td>
+	<td>label=WEP key #2</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td>123456789abcdef0123456789a</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>label=Default Key:</td>
+	<td>label=WEP key #3</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td>123456789abcdef0123456789a</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #3:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #3:</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #3:</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #3:</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #3:</td>
+	<td>1234567890</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #3:</td>
+	<td>1234567890</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #3:</td>
+	<td>12345678901</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #3:</td>
+	<td>1234567890123</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #3:</td>
+	<td>1234567890123</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #3:</td>
+	<td>12345678901234</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #3:</td>
+	<td>123456789abcdef0123456789ab</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #3:</td>
+	<td>123456789abcdef0123456789a</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #3:</td>
+	<td>123456789abcdef0123456789a</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>label=Default Key:</td>
+	<td>label=WEP key #4</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #3:</td>
+	<td>123456789abcdef0123456789a</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #3:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #3:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #4:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #3:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #4:</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #3:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #4:</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #4:</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #4:</td>
+	<td>1234567890</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #3:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #4:</td>
+	<td>1234567890</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #4:</td>
+	<td>12345678901</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #4:</td>
+	<td>1234567890123</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #3:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #4:</td>
+	<td>1234567890123</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #4:</td>
+	<td>12345678901234</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #4:</td>
+	<td>123456789abcdef0123456789ab</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>label=WEP key #4:</td>
+	<td>123456789abcdef0123456789a</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>text=5/13 ASCII symbols or 10/26 hex digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditableAndClick</td>
+	<td>button=Apply,'Switch*on:'</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent text=Settings saved*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=WEP key*:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>label=Default Key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotEditable</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>label=WPA Pre-shared key:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Disable SSID broadcasting:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>label=Switch*on:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>label=Enable WMM:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Enable Encryption:</td>
+	<td>enabled</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #1:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #2:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #3:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=WEP key #4:</td>
+	<td>123456789abcdef0123456789a</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Country:</td>
+	<td>US</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Mode:</td>
+	<td>BG</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel number:</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Channel width:</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>label=Transmission power level:</td>
+	<td>10</td>
 </tr>
 </tbody>
 </table>
