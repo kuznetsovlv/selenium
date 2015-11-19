@@ -10,103 +10,81 @@
 			path: path,
 			name: 'conf',
 			delimeter: '\t'
-		},
-		{
-			type: 'output',
-			path: [path.replace(/\.\w*/, ''), 'html'].join('.'),
-			name: 'output'
 		}
 	]);
-	function toHTML (obj, tag, t) {
-		var tabs = '',
-		    end = '</' + tag + '>';
-		for (var i = 0; i < t; ++i)
-			tabs += '\t';
-		var line = '<' + tag;
-		for (var key in obj) {
-			if (key === 'text')
-				continue;
-			var v = obj[key];
-			if (typeof v === 'object')
-				continue;
-			line += (' ' + key + '="' + v + '"');
-			delete obj[key];
-		}
-		if (!Object.keys(obj).length)
-			return output.printLine(tabs + line + '/>');
-		line += '>';
-		if ('text' in obj && typeof obj.text !== 'object') {
-			line += obj.text;
-			delete obj.text;
-		}
-		if (!Object.keys(obj).length)
-			return output.printLine(tabs + line + end);
-		output.printLine(tabs + line);
-		for (var key in obj) {
-			var v = obj[key],
-			    _t = key === 'td' ? t + 1 : t;
-			if (v instanceof Array)
-				for (var i = 0, l = v.length; i < l; ++i)
-					toHTML(v[i], key, _t);
-			else
-				toHTML(v, key, _t);
-		}
-		output.printLine(tabs + end);
+	var DOM = require('nodeDOM');
+
+	var DOM = new DOM(),
+	    document = DOM.createHTMLDocument('', DOM.createDocumentType('html', '-//W3C//DTD XHTML 1.0 Strict//EN', 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd')),
+	    html = document.documentElement,
+	    link = document.createElement('link');
+
+	html.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
+	html.setAttribute('xml:lang', 'en');
+	html.setAttribute('lang', 'en');
+	document.head.setAttribute('profile', 'http://selenium-ide.openqa.org/profiles/test-case');
+	document.getElementsByTagName('meta')[0].setAttribute('http-equiv', 'Content-Type');
+	document.head.appendChild(link);
+	link.setAttribute('rel', 'selenium.base');
+	link.setAttribute('href', 'http://192.168.1.1/');
+
+	var table = document.createElement('table'),
+	    thead = document.createElement('thead'),
+	    tbody = document.createElement('tbody'),
+	    hrow = document.createElement('tr'),
+	    htd = document.createElement('td');
+	table.setAttribute('cellpadding', '1');
+	table.setAttribute('cellspacing', '1');
+	table.setAttribute('border', '1');
+	table.appendChild(thead);
+	table.appendChild(tbody);
+	thead.appendChild(hrow);
+	hrow.appendChild(htd);
+	htd.setAttribute('rowspan', '1');
+	htd.setAttribute('colspan', '3');
+	
+
+	function setTitle (title) {
+		document.title = title;
+		var c;
+		while (c = htd.firstChild)
+			htd.removeChild(c);
+		htd.appendChild(document.createTextNode(document.title));
 	}
+
+	document.body.appendChild(table);
+
 	function parseCommands (values) {
-		var cmds = [];
+		function _col (val) {
+			var td = document.createElement('td');
+			td.appendChild(document.createTextNode(val));
+			return td;
+		}
+		var fragment = document.createDocumentFragment();
 		for (var key in values)
 			values[key] = ('' + values[key]).split('<>');
 		var commands = values.command || [''],
 		    expects = values.expect || [''];
 		values = values.value || [''];
+		
 		for (var c = 0, cl = commands.length; c < cl; ++c) {
 			var command = commands[c];
 			for (var v = 0, vl = values.length; v < vl; ++v) {
-				var value = values[v];
-				cmds.push({td: [{text: command}, {text: value}, {text: expects[c * vl + v] || ''}]})
+				var value = values[v],
+				    tr = document.createElement('tr');
+				tr.appendChild(_col(command));
+				tr.appendChild(_col(value));
+				tr.appendChild(_col(expects[c * vl + v] || ''));
+				fragment.appendChild(tr);
 			}
 		}
-		return cmds;
+		return fragment;
 	}
-	var html = {
-		xmlns: "http://www.w3.org/1999/xhtml",
-		'xml:lang': "en",
-		lang: "en",
-		head: {
-			profile: "http://selenium-ide.openqa.org/profiles/test-case",
-			meta: {'http-equiv': "Content-Type", content: "text/html; charset=UTF-8"},
-			link: {rel: "selenium.base", href: "http://192.168.1.1"},
-			title: {text: ""}
-		},
-		body: {
-			table: {
-				cellpadding: 1,
-				cellspacing: 1,
-				border: 1,
-				thead: {
-					tr: {
-						td: {
-							rowspan: 1,
-							colspan: 3
-						}
-					}
-				},
-				tbody: {
-					tr: []
-				}
-			}
-		}
-	};
 	var conf = lio.conf,
 	    i = 1,
 	    values,
-	    output = lio.output,
-	    tr = [],
 	    SETS = {},
 	    setMaking = null;
-	output.printLine('<?xml version="1.0" encoding="UTF-8"?>');
-	output.printLine('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
 	conf.getHeader();
 
 	while (values = conf.getValues(i++)) {
@@ -115,36 +93,36 @@
 		if (!command)
 			continue;
 		if (SETS[command]) {
-			var set = util.clone(SETS[command]);
+			var set = SETS[command].cloneNode(true);
 			if (setMaking)
-				SETS[setMaking] = SETS[setMaking].concat(set);
+				SETS[setMaking].appendChild(set);
 			else
-				tr = tr.concat(set);
+				tbody.appendChild(set);
 		} else {
 			switch (command) {
-				case 'title': html.head.title.text = value; html.body.table.thead.tr.td.text = value; break;
-				case 'href': html.head.link.href = value; break;
+				case 'title': setTitle(value); break;
+				case 'href': link.setAttribute('href', value); break;
 				case 'startSet':
 					if (setMaking)
-						throw "Str " + --i + ": Incorrect structure: trying start set while not finished one.";
+						throw "Str " + i + ": Incorrect structure: trying start set while not finished one.";
 					if (SETS[value])
-						throw "Str " + --i + ": Set name " + value + " already exists.";
+						throw "Str " + i + ": Set name " + value + " already exists.";
 					setMaking = value;
-					SETS[value] = [];
+					SETS[value] = document.createDocumentFragment();
 					break;
 				case 'endSet':
 					if (!setMaking)
-						throw "Str " + --i + ": Incorrect structure: trying finish unstarted set.";
+						throw "Str " + i + ": Incorrect structure: trying finish unstarted set.";
 					setMaking = null;
 					break;
-				default: values = parseCommands(values);
+				default:
+					values = parseCommands(values);
 					if (setMaking)
-						SETS[setMaking] = SETS[setMaking].concat(values);
+						SETS[setMaking].appendChild(values);
 					else
-						tr = tr.concat(values);
+						tbody.appendChild(values);
 			}
 		}
 	}
-	html.body.table.tbody.tr = tr;
-	toHTML(html, 'html', 0);
+	document.drawDocument([path.replace(/\.\w*/, ''), 'html'].join('.'), 'selenium', true);
 })()
