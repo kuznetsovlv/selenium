@@ -53,135 +53,170 @@
 
 	document.body.appendChild(table);
 
-	function parseCommands (values, vars) {
-		function _col (val) {
-			var td = document.createElement('td');
-			td.appendChild(document.createTextNode(val));
-			return td;
-		}
-		var fragment = document.createDocumentFragment();
-		for (var key in values) {
-			var tmp = ('' + values[key]).split('<>');
-			tmp.forEach(function (elem, i, arr) {
-				if (elem in vars)
-					arr[i] = vars[elem];
-			});
-			values[key] = tmp;
-		}
-		var commands = values.command || [''],
-		    expects = values.expect || [''];
-		values = values.value || [''];
-		for (var c = 0, cl = commands.length; c < cl; ++c) {
-			var command = commands[c];
-			for (var v = 0, vl = values.length; v < vl; ++v) {
-				var value = values[v],
-				    tr = document.createElement('tr');
-				tr.appendChild(_col(command));
-				tr.appendChild(_col(value));
-				tr.appendChild(_col(expects[c * vl + v] || ''));
-				fragment.appendChild(tr);
-			}
-		}
-		return fragment;
-	}
 	var conf = lio.conf,
 	    i = 1,
 	    values,
 	    SETS = {},
 	    setMaking = null,
-		forCircle = null,
-		circle = [];
+		forLoop = null,
+		loop = [];
 	conf.getHeader();
 
-	function valuesToCommand (values, vars, strNum, endCircle) {
-		var command = values.command,
-		    value = values.value || '';
-		if (!command)
-			return;
-		if (SETS[command]) {
-			var set = SETS[command].cloneNode(true);
-			if (forCircle && !endCircle) {
-				var tmp = set.firstChild;
-				while (tmp && tmp.children) {
-					circle.push({
-						command: tmp.children[0].firstChild.data || '',
-						value: tmp.children[1].firstChild.data || '',
-						expect: tmp.children[2].firstChild.data || ''
-					});
-					tmp = tmp.nextSibling;
-				}
-			} else if (setMaking) {
-				SETS[setMaking].appendChild(set);
-			} else {
-				tbody.appendChild(set);
+	function objToCommandList (obj) {
+		if (obj.command === 'forLoop')
+			return [obj];
+		for (var key in obj)
+			obj[key] = ('' + obj[key]).split('<>');
+		var commands = obj.command || [''],
+		    expects = obj.expect || [''],
+		    values = obj.value || [''],
+		    list = [];
+		for (var c = 0, cl = commands.length; c < cl; ++c) {
+			var command = commands[c];
+			for (var v = 0, vl = values.length; v < vl; ++v) {
+				var value = values[v];
+				list.push({command: command, value: value, expect: expects[c * vl + v] || ''});
 			}
-		} else {
-			switch (command) {
-				case 'title': setTitle(value); break;
-				case 'href': link.setAttribute('href', value); break;
-				case 'forCircle':
-					if (forCircle)
-						throw "Str " + strNum + ": Incorrectstructure: trying start forCircle while not finished one.";
-					forCircle = [];
-					var r = /(?:\([^()]*\))/g,
-					    res;
-					while ((res = r.exec(value))) {
-						var tmp = res[0].split('<>');
-						tmp[0] = tmp[0].substr(1);
-						tmp[tmp.length - 1] = tmp[tmp.length - 1].substr(0, tmp[tmp.length - 1].length - 1);
-						forCircle.push(tmp);
+		}
+		return list;
+	}
+
+	function parseLoop (loop) {
+		var vars = loop.shift(),
+		    list = [],
+		    r = /(?:\([^()]*\))/g,
+		    res;
+		while ((res = r.exec(vars))) {
+			var tmp = res[0].split('<>');
+			tmp[0] = tmp[0].substr(1);
+			tmp[tmp.length - 1] = tmp[tmp.length - 1].substr(0, tmp[tmp.length - 1].length - 1);
+			list.push(tmp);
+		}
+		vars = [];
+		var tmp = list[0];
+		for (var i = 1, length = list.length; i < length; ++i) {
+			var item = list[i],
+			    obj = {};
+			for (var j = 0, l = tmp.length; j < l; ++j)
+				obj[tmp[j]] = item[j] || '';
+			vars.push(obj);
+		}
+
+		var res = [];
+		tmp = []
+		for (var i = 0, length = loop.length; i < length; ++i) {
+			var item = loop[i];
+			if (item.command === 'forLoop') {
+				var loops = 1, newLoop = [item.value];
+				while (item = loop(++i)) {
+					switch (item.command) {
+						case 'forLoop': ++loops; break;
+						case 'endForLoop': --loops; break;
 					}
-					break;
-				case 'endForCircle':
-					if (!forCircle)
-						throw "Str " + strNum + ": Incorrect structure: trying finish unstarted forCircle.";
-					var varList = forCircle[0],
-					    valength = varList.length,
-					    vars = {};
-					for (var i = 1, f = forCircle.length; i < f; ++i) {
-						var elem = forCircle[i];
-						for (var j = 0; j < valength; ++j)
-							vars[varList[j]] = elem[j];
-						for (var j = 0, l = circle.length; j < l; ++j) {
-							var tmp = circle[j],
-							    elem = {};
-							for (var key in tmp)
-								elem[key] = tmp[key];
-							valuesToCommand(elem, vars, strNum, true);
+					if (!loops)
+						break;
+					newLoop.push(item);
+				}
+				item = parseLoop(newLoop);
+			} else {
+				item = objToCommandList(item);
+			}
+			for (var j = 0, l = item.length; j < l; ++j)
+				tmp.push(item[j]);
+		}
+
+		for (var i = 0, length = vars.length; i < length; ++i) {
+			var v = vars[i];
+			for (var j = 0, l = tmp.length; j < l; ++j) {
+				var item = tmp[j];
+				for (var key in item) {
+					if (item[key] in v)
+						item[key] = v[item[key]];
+				}
+				res.push(item);
+			}
+		}
+		return res;
+	}
+
+	function toDOM (list) {
+		function _col (val) {
+			var td = document.createElement('td');
+			td.appendChild(document.createTextNode(val));
+			return td;
+		}
+		for (var i = 0, l = list.length; i < l; ++i) {
+			var obj = list[i];
+			if (SETS[obj.command]) {
+				toDOM (SETS[obj.command]);
+				continue;
+			}
+			switch (obj.command) {
+				case 'endSet': throw "Incorrect structure: trying finish unstarted set in a loop.";
+				case 'endForLoop': throw "Incorrect structure: trying finish unstarted forLoop in a set.";
+				case 'forLoop':
+					var loops = 1, loop = [obj.value];
+					while (obj = list[++i]) {
+						switch (obj.command) {
+							case 'forLoop': ++loops; break;
+							case 'endForLoop': --loops; break;
 						}
+						if (!loops)
+							break;
+						loop.push(obj);
 					}
-					forCircle = null;
-					circle = [];
-					break;
-				case 'startSet':
-					if (setMaking)
-						throw "Str " + strNum + ": Incorrect structure: trying start set while not finished one.";
-					if (SETS[value])
-						throw "Str " + strNum + ": Set name " + value + " already exists.";
-					setMaking = value;
-					SETS[value] = document.createDocumentFragment();
-					break;
-				case 'endSet':
-					if (!setMaking)
-						throw "Str " + strNum + ": Incorrect structure: trying finish unstarted set.";
-					setMaking = null;
+					if (loops)
+						throw "Unclosed loop found!";
+					toDOM(parseLoop(loop));
 					break;
 				default:
-					if(forCircle && !endCircle) {
-						circle.push(values);
-					} else {
-					values = parseCommands(values, vars);
-						if (setMaking)
-							SETS[setMaking].appendChild(values); 
-						else
-							tbody.appendChild(values);
-					}
+					if (!obj.command)
+						continue;
+					var tr = document.createElement('tr');
+					tr.appendChild(_col(obj.command));
+					tr.appendChild(_col(obj.value));
+					tr.appendChild(_col(obj.expect || ''));
+					tbody.appendChild(tr);
 			}
 		}
 	}
 
-	while (values = conf.getValues(i)) {
-			valuesToCommand(values, {}, i++, false);
+	while (values = conf.getValues(i++)) {
+		switch (values.command) {
+			case 'title': setTitle(values.value); break;
+			case 'href': link.setAttribute('href', values.value); break;
+			case 'startSet':
+				if (SETS[values.value])
+					throw "Str " + i + ": Set name " + value + " already exists.";
+				var set = [];
+				SETS[values.value] = set;
+				while ((values = conf.getValues(i++)) && (values.command !== 'endSet')) {
+					if (values.command === 'startSet')
+						throw "Str " + i + ": Incorrect structure: trying start set while not finished one.";
+					values = objToCommandList(values);
+					for (var j = 0, l = values.length; j < l; ++j)
+						set.push(values[j]);
+				}
+				break;
+			case 'endSet': throw "Str " + i + ": Incorrect structure: trying finish unstarted set.";
+			case 'endForLoop': throw "Str " + i + ": Incorrect structure: trying finish unstarted forLoop.";
+			case 'forLoop':
+				var loops = 1, loop = [values.value];
+				while (values = conf.getValues(i++)) {
+					switch (values.command) {
+						case 'forLoop': ++loops; break;
+						case 'endForLoop': --loops; break;
+					}
+					if (!loops)
+						break;
+					loop.push(values);
+				}
+				if (loops)
+					throw "Unclosed loop found!";
+				toDOM(parseLoop(loop));
+				break;
+			default: toDOM(objToCommandList(values));
+		}
 	}
 	document.drawDocument([path.replace(/\.\w*/, ''), 'html'].join('.'), 'selenium', true);
 })()
