@@ -12,6 +12,7 @@
 		}
 	]);
 	var DOM = require('nodeDOM');
+	var utils = require('utils');
 
 	var DOM = new DOM(),
 	    document = DOM.createHTMLDocument('', DOM.createDocumentType('html', '-//W3C//DTD XHTML 1.0 Strict//EN', 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd')),
@@ -128,7 +129,7 @@
 		for (var i = 0, length = vars.length; i < length; ++i) {
 			var v = vars[i];
 			for (var j = 0, l = tmp.length; j < l; ++j) {
-				var item = tmp[j];
+				var item = utils.clone(tmp[j]);
 				for (var key in item) {
 					if (item[key] in v)
 						item[key] = v[item[key]];
