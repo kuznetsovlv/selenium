@@ -109,7 +109,7 @@
 			var item = loop[i];
 			if (item.command === 'forLoop') {
 				var loops = 1, newLoop = [item.value];
-				while (item = loop(++i)) {
+				while (item = loop[++i]) {
 					switch (item.command) {
 						case 'forLoop': ++loops; break;
 						case 'endForLoop': --loops; break;
